@@ -2,8 +2,8 @@
 v-app
   //- bar區 -----------------------------------------
   v-app-bar(color="#1B5E20")
-    v-btn(icon to='/' color="#DD2C00").mr-n5
-      v-icon mdi-home-circle
+    v-btn(icon to='/' color="#D50000").mr-n5
+      v-icon mdi-heart
     //- 首頁標題
     v-app-bar-title#title POmOdORO
     v-spacer
@@ -54,14 +54,13 @@ const { toggleNotify } = list
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Engagement&display=swap');
 
- #title {
-    font-size: 40px;
+  #title {
+    font-size: 30px;
     font-family: 'Engagement', cursive;
     color: #76FF03;
   }
-  v-main {
-    background-color: #AB47BC;
-  }
+
+
 </style>
 
 

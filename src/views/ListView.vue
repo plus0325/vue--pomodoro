@@ -1,7 +1,7 @@
 <template lang="pug">
 v-row#list
   v-col(cols='12')
-    h1 待辦事項
+    h1.text-center 待辦事項
   v-col(cols='12')
     v-text-field(
       variant="underlined"
@@ -24,13 +24,13 @@ v-row#list
             v-text-field(v-if="item.edit" v-model="item.model" autofocus)
             span(v-else) {{ item.name }}
           td
-            span(v-if="item.edit")
-              v-btn(icon variant="plain" flat color="orange" @click="confirmEdiItem(i)")
+            span(v-if="item.edit" class="d-flex flex-row")
+              v-btn(icon variant="plain" flat color="green" @click="confirmEdiItem(i)")
                 v-icon mdi-check
               v-btn(icon variant="plain" flat color="red" @click="cancelEditItem(i)")
                 v-icon mdi-undo
-            span(v-else)
-              v-btn(icon variant="plain" flat color="orange" @click="editItem(i)")
+            span(v-else class="d-flex flex-row  flex-row")
+              v-btn(icon variant="plain" flat color="green" @click="editItem(i)")
                 v-icon mdi-pencil
               v-btn(icon variant="plain" flat color="red" @click="delItem(i)")
                 v-icon mdi-delete

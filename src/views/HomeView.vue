@@ -3,8 +3,8 @@
 <v-row id="home" class="text-center">
   <v-col cols="12">
     <h1>{{ currentText }}</h1>
-    <h1>{{ timeText }}</h1>
   </v-col>
+  
   //- v-col 包住的東西好像都會變成block各自一行佔滿版面？？？？？？？？？？？？
   <v-col cols="12" class="d-flex flex-row justify-center">
     //- 設定按鈕出現的時間點(0 = 停止)(1 = 倒數中)(2 = 暫停)
@@ -20,22 +20,12 @@
     <v-btn icon="icon" color="red" class="mx-3" v-if="current.length > 0" @click="finishTimer(true)">
        <v-icon color="white">mdi-skip-next</v-icon>
     </v-btn>
-
-  </v-col>
-  <div class="o"></div>
+  </v-col> 
+  <div class="o">
+    <v-rating v-model="rating" empty-icon="mdi-star" full-icon="mdi-star-outline" half-icon="mdi-circle-half" half-increments hover   size="x-small" color="green"></v-rating>
+    <h1 class="timeText">{{ timeText }}</h1>
+  </div>
 </v-row>
-
-//- v-row.text-center#home
-//-   v-col(cols="12")
-//-     h1 {{ currentText }}
-//-     h1 {{ timeText }}
-//-   v-col(cols="12")
-//-     v-btn(icon color="green")
-//-       v-icon(color="white") mdi-play
-//-     v-btn(icon color="blue")
-//-       v-icon mdi-pause
-//-     v-btn(icon color="red")
-//-       v-icon mdi-skip-next
 
 </template>
 
@@ -125,12 +115,24 @@ const startTimer = () => {
 
 
 <style>
+
 .o {
   width: 300px;
   height: 300px;
   border-radius: 100%;
-  background-color: red;
+  background-color: #D50000;
   margin: auto;
   margin-top: 5%;
+  position: relative;
+}
+
+
+.timeText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  color:#EF5350;
 }
 </style>
